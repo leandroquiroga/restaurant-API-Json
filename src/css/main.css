@@ -9,8 +9,16 @@
     --dark: #202020;
     --red: #FF0000;
     --blue-dark: #0c163f;
-    --blue-ligth: #192761;
+    --blue-ligth: #2b4094;
 }
+.err{
+    font: 600 1rem var(--font);
+    color: var(--white);
+    text-align: center;
+    background-color: var(--red);
+    margin-top: 10px;
+}
+
 .header{
     background-color: var(--blue-dark);
 }
@@ -33,6 +41,7 @@
 .main .formulario .button{
     background-color: #0c163f;
     font: 600 1rem var(--font);
+    transition: all .5s ease-in-out;
 }
 .main .formulario .button:hover{
     background-color: var(--blue-ligth);
@@ -48,15 +57,62 @@
 .menu{
     width: 90%;
 }
-.menu .accordion-collapse .accordion-body .inputs .col-8 .title-font{
-    font: 400 1.5rem var(--font)
+.menu .list-menu{
+    background-color: var(--blue-dark)
 }
-.menu .accordion-collapse .accordion-body .inputs .col-3 .form-control::placeholder{
-    font: 400 1rem var(--font);
-    text-align: center;
+
+/* Spinner */
+.sk-chase {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    animation: sk-chase 2.5s infinite linear both;
 }
-.menu .form-control .accordion .accordion-button:not(.collapsed){
-    background-color: var(--blue-dark);
-    color: var(--white);
-    font: 400 .9rem var(--font);
+
+.sk-chase-dot {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0; 
+    animation: sk-chase-dot 2.0s infinite ease-in-out both; 
+}
+
+.sk-chase-dot:before {
+    content: '';
+    display: block;
+    width: 25%;
+    height: 25%;
+    background-color: var(--blue-ligth);
+    border-radius: 100%;
+    animation: sk-chase-dot-before 2.0s infinite ease-in-out both; 
+}
+
+.sk-chase-dot:nth-child(1) { animation-delay: -1.1s; }
+.sk-chase-dot:nth-child(2) { animation-delay: -1.0s; }
+.sk-chase-dot:nth-child(3) { animation-delay: -0.9s; }
+.sk-chase-dot:nth-child(4) { animation-delay: -0.8s; }
+.sk-chase-dot:nth-child(5) { animation-delay: -0.7s; }
+.sk-chase-dot:nth-child(6) { animation-delay: -0.6s; }
+.sk-chase-dot:nth-child(1):before { animation-delay: -1.1s; }
+.sk-chase-dot:nth-child(2):before { animation-delay: -1.0s; }
+.sk-chase-dot:nth-child(3):before { animation-delay: -0.9s; }
+.sk-chase-dot:nth-child(4):before { animation-delay: -0.8s; }
+.sk-chase-dot:nth-child(5):before { animation-delay: -0.7s; }
+.sk-chase-dot:nth-child(6):before { animation-delay: -0.6s; }
+
+@keyframes sk-chase {
+    100% { transform: rotate(360deg); } 
+}
+
+@keyframes sk-chase-dot {
+    80%, 100% { transform: rotate(360deg); } 
+}
+
+@keyframes sk-chase-dot-before {
+    50% {
+    transform: scale(0.4); 
+    } 100%, 0% {
+    transform: scale(1.0); 
+    } 
 }
