@@ -33,19 +33,29 @@
         </header>
         <main class="main container mx-auto p-2 d-flex row justify-content-center">
             <section class="formulario p-2">
-                <form action="" class="form-control">
+                <form action="" class="form-control" id="form">
                     <div class="mb-3 px-3">
                         <label for="table" class="form-label">Mesa: </label>
                         <input type="text" class="form-control p-2 shadow-none" autofocus id="table" name="table" placeholder="Enter a table number...">
                       </div>
-                      <div class="mb-3 px-3">
+                      <div class="mb-3 px-3 time">
                         <label for="hours" class="form-label">Hora: </label>
                         <input type="time" class="form-control p-2 shadow-none" id="hours" placeholder="Enter the billing time...">
                     </div>
                     <div class="mb-3 px-3 w-100 d-flex justify-content-center"> 
-                        <a href="facturacion.html" id="calculator-mount" target="_blank" class="button text-center text-white text-decoration-none p-2 rounded-3 border-0" >Tomar Pedido</a>
+                        <button type="button" id="calculator-mount"  class="button text-center text-white text-decoration-none p-2 rounded-3 border-0" >Tomar Pedido</button>
                       </div>
                 </form>
+            </section>
+            <section class="d-flex justify-content-center p-1 spinner d-none my-3">
+                <div class="sk-chase">
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                  </div>
             </section>
             <!-- Cards -->
             <section class="cards p-2" id="card-payment"></section>
