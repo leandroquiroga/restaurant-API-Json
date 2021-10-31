@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --font: 'Poppins', sans-serif;
+    --white: #fefefe;
+    --dark: #202020;
+    --red: #FF0000;
+    --blue-dark: #0c163f;
+    --blue-ligth: #192761;
+}
+.header{
+    background-color: var(--blue-dark);
+}
+.header .navbar .navbar-nav .nav-item .ancla{
+    font: 400 1rem var(--font);
+    color: var(--white);
+}
+.main .formulario{
+    width: 50%;
+}
+.main .formulario .form-label{
+    font: 400 1.2rem var(--font);
+}
+.main .formulario .form-control::placeholder{
+    font: 400 1rem var(--font)
+}
+.main .formulario .form-control:focus{
+    border-color: var(--blue-dark);
+}
+.main .formulario .button{
+    background-color: #0c163f;
+    font: 600 1rem var(--font);
+}
+.main .formulario .button:hover{
+    background-color: var(--blue-ligth);
+    transition: all .5s ease-in-out;
+}
+.main .cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(225px, auto));
+    row-gap: 10px;
+    column-gap: 15px;
+    place-content: center;
+}
+.menu{
+    width: 90%;
+}
+.menu .accordion-collapse .accordion-body .inputs .col-8 .title-font{
+    font: 400 1.5rem var(--font)
+}
+.menu .accordion-collapse .accordion-body .inputs .col-3 .form-control::placeholder{
+    font: 400 1rem var(--font);
+    text-align: center;
+}
+.menu .form-control .accordion .accordion-button:not(.collapsed){
+    background-color: var(--blue-dark);
+    color: var(--white);
+    font: 400 .9rem var(--font);
+}
