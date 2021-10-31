@@ -1,0 +1,118 @@
+{
+    "menu":[
+        {
+            "id": 1,
+            "nombre": "Muzzarela",
+            "precio": 520,
+            "categoria": "Pizzas"
+            
+        },
+        {
+            "id": 2,
+            "nombre": "Muzzarela con Jamon",
+            "precio": 620,
+            "categoria": "Pizzas"
+            
+        },
+        {
+            "id": 3,
+            "nombre": "Muzzarela con Morron",
+            "precio": 620,
+            "categoria": "Pizzas"
+            
+        },        {
+            "id": 4,
+            "nombre": "Especial",
+            "precio": 650,
+            "categoria": "Pizzas"
+            
+        },        {
+            "id": 5,
+            "nombre": "Napolitana",
+            "precio": 630,
+            "categoria": "Pizzas"
+            
+        },        {
+            "id": 6,
+            "nombre": "Calabresa",
+            "precio": 680,
+            "categoria": "Pizzas"
+            
+        },        {
+            "id": 7,
+            "nombre": "Rucula con Jamon",
+            "precio": 680,
+            "categoria": "Pizzas"
+            
+        },        {
+            "id": 8,
+            "nombre": "Especial Panceta",
+            "precio": 680,
+            "categoria": "Pizzas"
+            
+        },        {
+            "id": 9,
+            "nombre": "Roquefort",
+            "precio": 680,
+            "categoria": "Pizzas"
+            
+        },
+        {
+            "id": 10,
+            "nombre": "Jamon y Queso",
+            "precio": 720,
+            "categoria": "Empanadas"
+            
+        },
+        {
+            "id": 11,
+            "nombre": "Carne",
+            "precio": 700,
+            "categoria": "Empanadas"
+            
+        },
+        {
+            "id": 12,
+            "nombre": "Carne Cuchillo",
+            "precio": 710,
+            "categoria": "Empanadas"
+            
+        },        {
+            "id": 13,
+            "nombre": "Pollo",
+            "precio": 650,
+            "categoria": "Empanadas"
+            
+        },        {
+            "id": 14,
+            "nombre": "Verdura",
+            "precio": 630,
+            "categoria": "Empanadas"
+            
+        },        {
+            "id": 15,
+            "nombre": "Humita",
+            "precio": 680,
+            "categoria": "Empanadas"
+            
+        },        {
+            "id": 16,
+            "nombre": "Cebolla y Queso",
+            "precio": 680,
+            "categoria": "Empanadas"
+            
+        },        {
+            "id": 17,
+            "nombre": "Bondiola",
+            "precio": 680,
+            "categoria": "Empanadas"
+            
+        },        {
+            "id": 18,
+            "nombre": "Carne Picante",
+            "precio": 680,
+            "categoria": "Empanadas"
+            
+        }
+    ]
+}
