@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nuevo Pedido</title>
+        <link rel="shortcut icon" href="./assets/svg/payment.svg" type="image/x-icon">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <!-- CSS Styles -->
+        <link rel="stylesheet" href="./css/main.css">
+    </head>
+    <body>
+        <header class="d-flex justify-content-between align-content-center p-3 header">
+            <img src="./assets/img/payment.png" alt="logo">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <ul class="navbar-nav mx-4">
+                        <li class="nav-item ">
+                          <a class="nav-link ancla" aria-current="page" href="./index.html">Nuevo Cliente</a>
+                        </li>
+                        <li class="nav-item ">
+                          <a class="nav-link ancla" href="./facturacion.html">Facturacion</a>
+                        </li>
+                      </ul>
+                </div>
+            </nav>
+        </header>
+        <main class="main container mx-auto p-2 d-flex row justify-content-center">
+            <section class="formulario p-2">
+                <form action="" class="form-control">
+                    <div class="mb-3 px-3">
+                        <label for="table" class="form-label">Mesa: </label>
+                        <input type="text" class="form-control p-2 shadow-none" autofocus id="table" name="table" placeholder="Enter a table number...">
+                      </div>
+                      <div class="mb-3 px-3">
+                        <label for="hours" class="form-label">Hora: </label>
+                        <input type="time" class="form-control p-2 shadow-none" id="hours" placeholder="Enter the billing time...">
+                    </div>
+                    <div class="mb-3 px-3 w-100 d-flex justify-content-center"> 
+                        <a href="facturacion.html" id="calculator-mount" target="_blank" class="button text-center text-white text-decoration-none p-2 rounded-3 border-0" >Tomar Pedido</a>
+                      </div>
+                </form>
+            </section>
+            <!-- Cards -->
+            <section class="cards p-2" id="card-payment"></section>
+        </main>
+        <!-- Scripts -->
+        <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="./js/index.js"></script>
+    </body>
+</html>
