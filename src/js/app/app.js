@@ -14,6 +14,55 @@ class Interface {
             div.remove()
         }, 3500);
     }
+
+    showAPI(datas) {
+        let contentResult = selector('#content');
+    
+        // scripting
+        datas.forEach(data => {
+            const { nombre, precio, img, id } = data;
+            let col = creator('div');
+            let card = creator('div');
+            let divImg = creator('div')
+            let image = creator('img');
+            let card_body = creator('div');
+            let h5 = creator('h5');
+            let divCount = creator('div')
+            let input = creator('input')
+            let p = creator('p');
+    
+            col.classList.add('col');
+            card.classList.add('card');
+            card.style = 'width: 20rem;'
+            divImg.classList.add('content-img', 'p-2')
+            image.classList.add('card-img-top', 'img');
+            card_body.classList.add('card-body');
+            h5.classList.add('card-title');
+            divCount.classList.add('d-flex', 'p-1', 'flex-row', 'justify-content-between', 'align-items-center')
+            p.classList.add('card-text', 'mb-0');
+            input.classList.add('p-1', 'text-center', 'input')
+            input.style = 'width: 3rem;'
+    
+            image.src = `${img}`;
+            h5.textContent = `${nombre}`;
+            p.textContent = `$${precio}`
+            input.type = 'number';
+            input.min = '0';
+            input.id = `producto-${id}`;
+            input.placeholder = '0'
+
+            card_body.appendChild(h5);
+            divCount.appendChild(p);
+            divCount.appendChild(input);
+            card_body.appendChild(divCount)
+            divImg.appendChild(image)
+            card.appendChild(divImg);
+            card.appendChild(card_body);
+            col.appendChild(card)
+            contentResult.appendChild(col)
+    
+        })
+    }
 }
 
 /* ================ Global Varialbes  ================ */
@@ -28,29 +77,45 @@ let client = {
 }
 
 /* ================ Functions ================ */
+// show MENU-API
+const showMenuAPI = (datas) => {
+    ui.showAPI(datas)
+}
+
+// consult the API
+const consultAPI = () => {
+    const url = "http://localhost:4000/menu";
+    fetch(url)
+        .then(response => response.json())
+        .then(result => showMenuAPI(result))
+        .catch(err => console.log(err))
+}
+
+// add new client 
 const newClient = () => {
     let table = selector('#table').value;
     let hours = selector('#hours').value;
     let spinner = selector('.spinner');
+    let menu = selector('.menu')
 
     // Check if there are empty fields
     const empatyFields = [table, hours].some( field => field === '' );
-
     if (empatyFields) {
         ui.showErr('Todos los campos son obligatorios')
         return
     }
-
     spinner.classList.remove('d-none')
     client = { ...client, table, hours }
     setTimeout(() => {
         spinner.classList.add('d-none')
-        form.reset()
-        window.open('./../../facturacion.html', '_blank');
-     },2000)
-    console.log(client)
+        menu.classList.remove('d-none')
+        form.reset();
+        consultAPI();
+        // window.open('./../../facturacion.html', '_blank');
+    },2000)
 }
 
+// create database with IndexdDB
 const createDB = () => {
     const database = window.indexedDB.open('sales', 1);
 
