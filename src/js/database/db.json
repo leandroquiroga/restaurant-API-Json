@@ -5,7 +5,7 @@
             "nombre": "Muzzarela",
             "precio": 520,
             "categoria": "Pizzas",
-            "img": "https://unsplash.com/photos/MQUqbmszGGM"
+            "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.nueva-ciudad.com.ar%2Fadvf%2Fimagenes%2Feditadas%2F5e05008a2355e_800x550.jpg&f=1&nofb=11"
             
         },
         {
@@ -13,7 +13,7 @@
             "nombre": "Muzzarela con Jamon",
             "precio": 620,
             "categoria": "Pizzas",
-            "img": "https://unsplash.com/photos/LAJFSTJ5H-w"
+            "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fgeant.vteximg.com.br%2Farquivos%2Fids%2F206559-1000-1000%2F235871.jpg%3Fv%3D636409114341400000&f=1&nofb=1"
             
         },
         {
@@ -21,14 +21,14 @@
             "nombre": "Muzzarela con Morron",
             "precio": 620,
             "categoria": "Pizzas",
-            "img": "https://unsplash.com/photos/D3Mag4BKqns"
+            "img": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F3.bp.blogspot.com%2F_WF1rNUMAd8E%2FTHwu9Hmo3oI%2FAAAAAAAAAB8%2FcGoh0uzqJTA%2Fs1600%2FDSC01958.JPG&f=1&nofb=1"
         },        
         {
             "id": 4,
             "nombre": "Especial",
             "precio": 650,
             "categoria": "Pizzas",
-            "img": "https://unsplash.com/photos/Br1EvB6r5tw"
+            "img": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F4.bp.blogspot.com%2F-Prg0OzrGEXI%2FTgJTBmRdrNI%2FAAAAAAAAhP0%2F8hkbp4bwZaM%2Fs1600%2FMINORE%252BPIZZAS%252BDetalle%252Bde%252Buna%252Bpizza%252Bespecial%252Bde%252Bla%252Bcasa.JPG&f=1&nofb=1"
             
         },        
         {
@@ -36,7 +36,7 @@
             "nombre": "Napolitana",
             "precio": 630,
             "categoria": "Pizzas",
-            "img": "https://unsplash.com/photos/vc7DjXSry7g"
+            "img": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fmisterpizza.com.br%2Fwp-content%2Fuploads%2F2016%2F01%2Fpizza_napolitana.jpg&f=1&nofb=1"
             
         },        
         {
@@ -44,7 +44,7 @@
             "nombre": "Calabresa",
             "precio": 680,
             "categoria": "Pizzas",
-            "img": "https://unsplash.com/photos/uU0Anw-8Vsg"
+            "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpizzariameurancho.com.br%2Fwp-content%2Fuploads%2F2013%2F06%2F2-calabresa-1.jpg&f=1&nofb=1"
             
         },        
         {
@@ -52,7 +52,7 @@
             "nombre": "Rucula con Jamon",
             "precio": 680,
             "categoria": "Pizzas",
-            "img": "https://unsplash.com/photos/K8OeEgYT0fg"
+            "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.cucinare.tv%2Fwp-content%2Fuploads%2F2017%2F10%2FJAMON-CRUDO-Y-RUCULA-2.jpg&f=1&nofb=1"
             
         },        
         {
@@ -60,7 +60,7 @@
             "nombre": "Especial Panceta",
             "precio": 680,
             "categoria": "Pizzas",
-            "img": "https://unsplash.com/photos/Xt84tIHbjRY"
+            "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Frecetas-24.com%2Fwp-content%2Fuploads%2F2020%2F01%2Fpizza-de-panceta-scaled.jpg&f=1&nofb=1"
             
         },        
         {
@@ -68,7 +68,7 @@
             "nombre": "Roquefort",
             "precio": 680,
             "categoria": "Pizzas",
-            "img":"https://unsplash.com/photos/uwOGilcOKaw"
+            "img":"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.supermercedes.com.ar%2Fnapoles%2Fwp-content%2Fuploads%2F2020%2F04%2FPizza-Roquefort.png&f=1&nofb=1"
             
         },
         {
@@ -84,7 +84,7 @@
             "nombre": "Carne",
             "precio": 700,
             "categoria": "Empanadas",
-            "img": "https://unsplash.com/photos/EbeM_WLJ2aI"
+            "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcarnesargentinas.es%2Fwp-content%2Fuploads%2F2020%2F04%2Fempanada-ternera-scaled.jpeg%3Fv%3D1590646698&f=1&nofb=1"
             
         },
         {
@@ -132,23 +132,23 @@
         {
             "id": 18,
             "nombre": "Coca-Cola",
-            "precio": 680,
+            "precio": 280,
             "categoria": "Bebidas",
-            "img": "https://unsplash.com/photos/Qvnohn4GyJA"
+            "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIF.UWmg6MhV3tXRW8vztzI5vA%26pid%3DApi&f=1"
         },        
         {
             "id": 19,
             "nombre": "Sprite",
-            "precio": 680,
+            "precio": 210,
             "categoria": "Bebidas",
-            "img": "https://unsplash.com/photos/4KLT91f3mAM"
+            "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.coca-colaentuhogar.com%2Fmedia%2Fcatalog%2Fproduct%2Fcache%2F9376f1eb816eda0af02b0c0436fe42c0%2Fs%2Fp%2Fsprite-lima-limon-2.5-l-botella-pet.jpg_2.png&f=1&nofb=1"
         },        
         {
             "id": 20,
             "nombre": "Coca-Cola Zero",
-            "precio": 680,
+            "precio": 300,
             "categoria": "Bebidas",
-            "img": "https://unsplash.com/photos/-cUN1wIYlw8"
+            "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.61-k3Fobqx74_juAEhF4jAHaHa%26pid%3DApi&f=1"
         }
     ]
 }
