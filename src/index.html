@@ -33,7 +33,7 @@
         </header>
         <main class="main container mx-auto p-2 d-flex row justify-content-center">
             <section class="formulario p-2">
-                <form action="" class="form-control" id="form">
+                <form action="" class="form-control shadow rounded-3" id="form">
                     <div class="mb-3 px-3">
                         <label for="table" class="form-label">Mesa: </label>
                         <input type="text" class="form-control p-2 shadow-none" autofocus id="table" name="table" placeholder="Enter a table number...">
@@ -58,11 +58,44 @@
                   </div>
             </section>
             <section class="menu container mx-auto p-2 d-flex row justify-content-center d-none">
-                <h2 class="text-menu">Menu: </h2>
-                <div class="container mx-auto p-2 list-menu cards" id="content"></div>
+                <h2 class="text-menu text-center">Menu: </h2>
+                <div class="container mx-auto p-2 list-menu row  p-2 my-3">
+                    <h3 class="border-bottom text-menu">Pizzas: </h3>
+                    <div class="cards" id="content-pizza"></div>
+                </div>
+                <div class="container mx-auto p-2 list-menu row  p-2 my-3">
+                    <h3 class="border-bottom text-menu">Empanadas: </h3>
+                    <div class="cards" id="content-empanadas"></div>
+                </div>
+                <div class="container mx-auto p-2 list-menu row  p-2 my-3">
+                    <h3 class="border-bottom text-menu">Bebidas: </h3>
+                    <div class="cards" id="content-drink"></div>
+                </div>
+
+                <button id="finish-orden" type="button" disabled class="w-100 button text-center text-white text-decoration-none p-2 rounded-3 shadow" data-bs-toggle="modal" data-bs-target="#ticketModal">Finalizar Pedido</button>
             </section>
             <!-- Cards -->
             <section class="cards p-2" id="card-payment"></section>
+            <!-- Modal -->
+            <div class="modal fade" id="ticketModal" tabindex="-1" aria-labelledby="ticketModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ticketModalLabel">Ticket de Compra</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="text-time p-2 d-flex col justify-content-between">
+                        <small id="table-ticket"></small>
+                        <small id="time-modal"></small>
+                    </div>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer d-flex justify-content-between">
+                        <button type="button" class="w-100 button border-0 bg-danger text-center text-white text-decoration-none p-2 rounded-3 shadow" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="w-100 button border-0 bg-success text-center text-white text-decoration-none p-2 rounded-3 shadow">Confirmar</button>
+                    </div>
+                </div>
+                </div>
+            </div>
         </main>
         <!-- Scripts -->
         <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
