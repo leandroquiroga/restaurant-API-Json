@@ -1,6 +1,18 @@
+/* ================ Global Functions  ================ */
 const selector = (elment) => document.querySelector(elment);
 const creator = (element) => document.createElement(element);
+/* ================ Global Variables  ================ */
+let form = selector('#form');
+let DB;
+let buttonOrder = selector('#calculator-mount');
+let buttonFinish = selector('#finish-orden')
 
+/* ============ Object Global =========*/
+let client = {
+    table: '',
+    hours: '',
+    orden: [],
+}
 /* ================ Class ================ */
 class Interface {
     showErr(text) {
@@ -16,11 +28,12 @@ class Interface {
     }
 
     showAPI(datas) {
-        let contentResult = selector('#content');
-    
+        let menuPizza = selector('#content-pizza');
+        let menuEmp = selector('#content-empanadas');
+        let menuDrink = selector('#content-drink');
         // scripting
         datas.forEach(data => {
-            const { nombre, precio, img, id } = data;
+            const { nombre, precio, img, id, categoria } = data;
             let col = creator('div');
             let card = creator('div');
             let divImg = creator('div')
@@ -30,8 +43,9 @@ class Interface {
             let divCount = creator('div')
             let input = creator('input')
             let p = creator('p');
-    
-            col.classList.add('col');
+            
+            col.id = `${id}`
+            col.classList.add('col', 'shadow', 'rounded-3');
             card.classList.add('card');
             card.style = 'width: 20rem;'
             divImg.classList.add('content-img', 'p-2')
@@ -42,6 +56,13 @@ class Interface {
             p.classList.add('card-text', 'mb-0');
             input.classList.add('p-1', 'text-center', 'input')
             input.style = 'width: 3rem;'
+            
+            // ADD count and menu a order
+            input.onchange = () => {
+                const count = Number(input.value)
+                buttonFinish.disabled = false;
+                this.productCalculator({...data, count })
+            }
     
             image.src = `${img}`;
             h5.textContent = `${nombre}`;
@@ -58,24 +79,87 @@ class Interface {
             divImg.appendChild(image)
             card.appendChild(divImg);
             card.appendChild(card_body);
-            col.appendChild(card)
-            contentResult.appendChild(col)
+            col.appendChild(card);
+
+
+        // according to its category, place each item on the menu
+            switch (categoria) {
+                case 'Pizzas':
+                    menuPizza.appendChild(col)
+                    break;
+                case 'Empanadas':
+                    menuEmp.appendChild(col)
+                    break;
+                case 'Bebidas':
+                    menuDrink.appendChild(col)
+                    break;
+            }
+
+            // contentResult.appendChild(col)
     
         })
     }
+
+    productCalculator(product) {
+        let { orden } = client;
+
+        // if the item is in the array, update the quantity
+        if (product.count > 0) {
+
+            // check if element exists in array
+            if (orden.some(article => article.id === product.id)) {
+                // if it exists, we update the quantity
+                const ordenUpdate = orden.map(article => {
+                    if (article.id === product.id) {
+                        article.count = product.count;
+                    }
+                    return article;
+                });
+                // add new array an client.orden
+                client.orden = [...ordenUpdate]
+            } else {
+                // the artible does not existm so we add it
+                client.orden = [...orden,product];
+            }
+        } else {
+            // filter items tha are not equal
+            const result = orden.filter(article => article.id !== product.id);
+            // take a copy and assigns it to the orden array
+            client.orden = [...result]
+        }
+        this.showTikect(client)
+    }
+
+    // create a ticket orden
+    showTikect(product) {
+        console.log(product)
+        const { table, hours, orden} = product;
+        let time = selector('#time-modal');
+        let tableOrden = selector('#table-ticket');
+        let modal = selector('.modal-body');
+        let div = creator('div');
+        let p = creator('p');
+        let small = creator('small');
+
+        div.classList.add('col', 'd-flex' ,'justify-content-between', 'p-2');
+        p.classList.add('card-text');
+        small.classList.add('card-time');
+        tableOrden.textContent = `Mesa: N°${table}`;
+        time.textContent = `Hora: ${hours}`;
+        orden.forEach(article => {
+            const {precio, nombre, id} = article
+            p.textContent = `${nombre}`;
+            small.textContent = `$${precio}`
+            div.appendChild(p)
+            div.appendChild(small)
+        })
+
+        modal.appendChild(div)
+    }
 }
 
-/* ================ Global Varialbes  ================ */
+/* ================ Instance Class  ================ */
 const ui = new Interface();
-let form = selector('#form');
-let DB;
-let buttonOrder = selector('#calculator-mount')
-let client = {
-    table: '',
-    hours: '',
-    orden: [],
-}
-
 /* ================ Functions ================ */
 // show MENU-API
 const showMenuAPI = (datas) => {
