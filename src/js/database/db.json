@@ -73,79 +73,79 @@
         },
         {
             "id": 10,
-            "nombre": "Jamon y Queso",
-            "precio": 720,
+            "nombre": "Empanada Jamon y Queso",
+            "precio": 72,
             "categoria": "Empanadas",
             "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F1.bp.blogspot.com%2F-edGfBlKPgMU%2FUfqLPKvXNbI%2FAAAAAAAAADs%2Fk2kx3AnmaQA%2Fs1600%2Fempanada_jamon_queso.jpg&f=1&nofb=1"
             
         },
         {
             "id": 11,
-            "nombre": "Carne",
-            "precio": 700,
+            "nombre": "Empanada Carne",
+            "precio": 70,
             "categoria": "Empanadas",
             "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcarnesargentinas.es%2Fwp-content%2Fuploads%2F2020%2F04%2Fempanada-ternera-scaled.jpeg%3Fv%3D1590646698&f=1&nofb=1"
             
         },
         {
             "id": 12,
-            "nombre": "Carne Cuchillo",
-            "precio": 710,
+            "nombre": "Empanada Carne Cuchillo",
+            "precio": 71,
             "categoria": "Empanadas",
             "img": "https://feralf.com/images/Autos/Patri/empanada_al_cuchillo_1.jpg"
         },        
         {
             "id": 13,
-            "nombre": "Pollo",
-            "precio": 650,
+            "nombre": "Empanada Pollo",
+            "precio": 65,
             "categoria": "Empanadas",
             "img":"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.recetasnatura.com.ar%2Fsites%2Fdefault%2Ffiles%2Fempanadas_de_pollo.jpg&f=1&nofb=1"
         },        
         {
             "id": 14,
-            "nombre": "Verdura",
-            "precio": 630,
+            "nombre": "Empanada Verdura",
+            "precio": 63,
             "categoria": "Empanadas",
             "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Frecetasdetito.com.ar%2Fwp-content%2Fuploads%2F2020%2F01%2Fempanadas-de-verdura.jpg&f=1&nofb=1"
         },        
         {
             "id": 15,
-            "nombre": "Humita",
-            "precio": 680,
+            "nombre": "Empanada Humita",
+            "precio": 68,
             "categoria": "Empanadas",
             "img": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcocinachic.net%2Fwp-content%2Fuploads%2F2014%2F02%2Fh.jpg&f=1&nofb=1"
         },        
         {
             "id": 16,
-            "nombre": "Cebolla y Queso",
-            "precio": 680,
+            "nombre": "Empanada Cebolla y Queso",
+            "precio": 68,
             "categoria": "Empanadas",
             "img": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.vitapan.com.py%2Fwp-content%2Fuploads%2F2018%2F11%2Fempanada-de-cebolla-y-queso-asuncion-paraguay-vitapan.jpg&f=1&nofb=1"
         },        
         {
             "id": 17,
-            "nombre": "Bondiola",
-            "precio": 680,
+            "nombre": "Empanada Bondiola",
+            "precio": 68,
             "categoria": "Empanadas",
             "img":"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FrZX_6n3HlvQ%2Fmaxresdefault.jpg&f=1&nofb=1" 
         },        
         {
             "id": 18,
-            "nombre": "Coca-Cola",
+            "nombre": "Coca-Cola 2.25L",
             "precio": 280,
             "categoria": "Bebidas",
             "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIF.UWmg6MhV3tXRW8vztzI5vA%26pid%3DApi&f=1"
         },        
         {
             "id": 19,
-            "nombre": "Sprite",
+            "nombre": "Sprite 2.25L",
             "precio": 210,
             "categoria": "Bebidas",
             "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.coca-colaentuhogar.com%2Fmedia%2Fcatalog%2Fproduct%2Fcache%2F9376f1eb816eda0af02b0c0436fe42c0%2Fs%2Fp%2Fsprite-lima-limon-2.5-l-botella-pet.jpg_2.png&f=1&nofb=1"
         },        
         {
             "id": 20,
-            "nombre": "Coca-Cola Zero",
+            "nombre": "Coca-Cola Zero 2.25L",
             "precio": 300,
             "categoria": "Bebidas",
             "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.61-k3Fobqx74_juAEhF4jAHaHa%26pid%3DApi&f=1"
