@@ -49,10 +49,32 @@
 }
 .main .cards{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(225px, auto));
-    row-gap: 10px;
-    column-gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    row-gap: 20px;
+    column-gap: 35px;
     place-content: center;
+}
+
+.cards .content-img{
+    width: 100%;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+}
+.cards .content-img .img{
+    width: 100%;
+    height: 100%;
+}
+
+.card-title,
+.menu{
+    font: 400 1.3rem var(--font);
+}
+.card-text{
+    font: 600 1rem var(--font)
+}
+.input{
+    font: 400 .9rem var(--font)
 }
 .menu{
     width: 90%;
