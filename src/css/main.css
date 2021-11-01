@@ -5,11 +5,12 @@
 }
 :root{
     --font: 'Poppins', sans-serif;
-    --white: #fefefe;
+    --white: #ffffff;
     --dark: #202020;
     --red: #FF0000;
     --blue-dark: #0c163f;
     --blue-ligth: #2b4094;
+    --gray: #e9e9e9e9;
 }
 .err{
     font: 600 1rem var(--font);
@@ -18,7 +19,9 @@
     background-color: var(--red);
     margin-top: 10px;
 }
-
+body{
+    background-color: var(--gray);
+}
 .header{
     background-color: var(--blue-dark);
 }
@@ -38,14 +41,20 @@
 .main .formulario .form-control:focus{
     border-color: var(--blue-dark);
 }
-.main .formulario .button{
-    background-color: #0c163f;
+.button{
+    background-color: var(--blue-dark);
     font: 600 1rem var(--font);
     transition: all .5s ease-in-out;
+    cursor: pointer;
 }
-.main .formulario .button:hover{
+.button:hover{
     background-color: var(--blue-ligth);
     transition: all .5s ease-in-out;
+}
+
+.menu .button:disabled{
+    background-color: var(--dark);
+    cursor: no-drop;
 }
 .main .cards{
     display: grid;
@@ -73,14 +82,14 @@
 .card-text{
     font: 600 1rem var(--font)
 }
-.input{
+.input, .text-time{
     font: 400 .9rem var(--font)
 }
 .menu{
     width: 90%;
 }
 .menu .list-menu{
-    background-color: var(--blue-dark)
+    background-color: var(--gray)
 }
 
 /* Spinner */
