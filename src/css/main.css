@@ -82,7 +82,7 @@ body{
 .card-text{
     font: 600 1rem var(--font)
 }
-.input, .text-time{
+.input, .text-time, .text-mount{
     font: 400 .9rem var(--font)
 }
 .menu{
