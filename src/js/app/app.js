@@ -15,6 +15,13 @@ let client = {
 }
 /* ================ Class ================ */
 class Interface {
+    clearHTML(div) {
+
+
+        while (div.firstChild) {
+            div.removeChild(div.firstChild)
+        }
+    }
     showErr(text) {
         let elementParent = selector('.time');
         let div = creator('div');
@@ -43,7 +50,7 @@ class Interface {
             let divCount = creator('div')
             let input = creator('input')
             let p = creator('p');
-            
+
             col.id = `${id}`
             col.classList.add('col', 'shadow', 'rounded-3');
             card.classList.add('card');
@@ -56,21 +63,21 @@ class Interface {
             p.classList.add('card-text', 'mb-0');
             input.classList.add('p-1', 'text-center', 'input')
             input.style = 'width: 3rem;'
-            
+
+            image.src = `${img}`;
+            h5.textContent = `${nombre}`;
+            p.textContent = `$${precio}`
+            input.type = 'number';
+            input.min = '0';
+            input.id = `${id}`;
+            input.placeholder = '0'
+
             // ADD count and menu a order
             input.onchange = () => {
                 const count = Number(input.value)
                 buttonFinish.disabled = false;
                 this.productCalculator({...data, count })
             }
-    
-            image.src = `${img}`;
-            h5.textContent = `${nombre}`;
-            p.textContent = `$${precio}`
-            input.type = 'number';
-            input.min = '0';
-            input.id = `producto-${id}`;
-            input.placeholder = '0'
 
             card_body.appendChild(h5);
             divCount.appendChild(p);
@@ -94,15 +101,11 @@ class Interface {
                     menuDrink.appendChild(col)
                     break;
             }
-
-            // contentResult.appendChild(col)
-    
         })
     }
-
     productCalculator(product) {
         let { orden } = client;
-
+        let div = selector('.modal-body');
         // if the item is in the array, update the quantity
         if (product.count > 0) {
 
@@ -127,34 +130,29 @@ class Interface {
             // take a copy and assigns it to the orden array
             client.orden = [...result]
         }
-        this.showTikect(client)
+        this.clearHTML(div)
+        this.showTikect(client);
     }
 
     // create a ticket orden
     showTikect(product) {
-        console.log(product)
         const { table, hours, orden} = product;
         let time = selector('#time-modal');
         let tableOrden = selector('#table-ticket');
         let modal = selector('.modal-body');
-        let div = creator('div');
+        let row = creator('div');
+        let div = creator('div')
         let p = creator('p');
         let small = creator('small');
-
-        div.classList.add('col', 'd-flex' ,'justify-content-between', 'p-2');
+        row.classList.add('col', 'd-flex' ,'justify-content-between', 'p-2')
         p.classList.add('card-text');
         small.classList.add('card-time');
         tableOrden.textContent = `Mesa: N°${table}`;
         time.textContent = `Hora: ${hours}`;
-        orden.forEach(article => {
-            const {precio, nombre, id} = article
-            p.textContent = `${nombre}`;
-            small.textContent = `$${precio}`
-            div.appendChild(p)
-            div.appendChild(small)
-        })
+    }
 
-        modal.appendChild(div)
+    totalPrice(cant, price) {
+        return cant * price;
     }
 }
 
@@ -163,7 +161,7 @@ const ui = new Interface();
 /* ================ Functions ================ */
 // show MENU-API
 const showMenuAPI = (datas) => {
-    ui.showAPI(datas)
+    ui.showAPI(datas);
 }
 
 // consult the API
@@ -175,7 +173,7 @@ const consultAPI = () => {
         .catch(err => console.log(err))
 }
 
-// add new client 
+// add new client
 const newClient = () => {
     let table = selector('#table').value;
     let hours = selector('#hours').value;
