@@ -16,8 +16,6 @@ let client = {
 /* ================ Class ================ */
 class Interface {
     clearHTML(div) {
-
-
         while (div.firstChild) {
             div.removeChild(div.firstChild)
         }
@@ -105,7 +103,7 @@ class Interface {
     }
     productCalculator(product) {
         let { orden } = client;
-        let div = selector('.modal-body');
+
         // if the item is in the array, update the quantity
         if (product.count > 0) {
 
@@ -120,9 +118,11 @@ class Interface {
                 });
                 // add new array an client.orden
                 client.orden = [...ordenUpdate]
+                console.log(client.orden)
             } else {
                 // the artible does not existm so we add it
-                client.orden = [...orden,product];
+                client.orden = [...orden, product];
+                console.log(client.orden)
             }
         } else {
             // filter items tha are not equal
@@ -130,25 +130,61 @@ class Interface {
             // take a copy and assigns it to the orden array
             client.orden = [...result]
         }
-        this.clearHTML(div)
+        let modal = selector('.modal-body');
+        this.clearHTML(modal)
         this.showTikect(client);
     }
 
     // create a ticket orden
     showTikect(product) {
-        const { table, hours, orden} = product;
+        const { table, hours, orden } = product;
+        let total = 0;
         let time = selector('#time-modal');
         let tableOrden = selector('#table-ticket');
         let modal = selector('.modal-body');
-        let row = creator('div');
-        let div = creator('div')
-        let p = creator('p');
-        let small = creator('small');
-        row.classList.add('col', 'd-flex' ,'justify-content-between', 'p-2')
-        p.classList.add('card-text');
-        small.classList.add('card-time');
+        let mount = selector('#mount')
+
         tableOrden.textContent = `Mesa: N°${table}`;
         time.textContent = `Hora: ${hours}`;
+
+        // ul
+
+        let ul = creator('ul');
+        ul.classList.add('list-group')
+
+        orden.forEach(article => {
+            const { nombre, count, precio } = article
+
+            let li = creator('li')
+            li.classList.add('list-group-item', 'd-flex', 'justify-content-between')
+            // p ==> name of products
+            let p = creator('p');
+            p.classList.add('card-text', 'w-50');
+            p.textContent = nombre
+
+
+            // small of the count
+            let smallCant = creator('small')
+            smallCant.classList.add('card-time')
+            smallCant.textContent = `${count}x`
+            
+            // small of price
+            let small = creator('small');
+            small.classList.add('card-time');
+            small.textContent = precio
+            
+            li.appendChild(p)
+            li.appendChild(smallCant)
+            li.appendChild(small)
+            // add element p and small
+            ul.appendChild(li)
+            
+            total = total + this.totalPrice(count, precio)
+
+        })
+        mount.textContent = total
+        modal.appendChild(ul)
+
     }
 
     totalPrice(cant, price) {
