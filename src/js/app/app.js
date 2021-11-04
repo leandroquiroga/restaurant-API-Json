@@ -5,7 +5,9 @@ const creator = (element) => document.createElement(element);
 let form = selector('#form');
 let DB;
 let buttonOrder = selector('#calculator-mount');
-let buttonFinish = selector('#finish-orden')
+let buttonFinish = selector('#finish-orden');
+let spinner = selector('.spinner');
+
 
 /* ============ Object Global =========*/
 let client = {
@@ -118,11 +120,9 @@ class Interface {
                 });
                 // add new array an client.orden
                 client.orden = [...ordenUpdate]
-                console.log(client.orden)
             } else {
                 // the artible does not existm so we add it
                 client.orden = [...orden, product];
-                console.log(client.orden)
             }
         } else {
             // filter items tha are not equal
@@ -131,7 +131,12 @@ class Interface {
             client.orden = [...result]
         }
         let modal = selector('.modal-body');
-        this.clearHTML(modal)
+        this.clearHTML(modal);
+        
+        // disable button the order if array.length = 0
+        if(client.orden.length === 0) buttonFinish.disabled = true;
+
+
         this.showTikect(client);
     }
 
@@ -171,7 +176,7 @@ class Interface {
             // small of price
             let small = creator('small');
             small.classList.add('card-time');
-            small.textContent = precio
+            small.textContent = `$  ${precio}`
             
             li.appendChild(p)
             li.appendChild(smallCant)
@@ -182,7 +187,7 @@ class Interface {
             total = total + this.totalPrice(count, precio)
 
         })
-        mount.textContent = total
+        mount.textContent = `$${total}`
         modal.appendChild(ul)
 
     }
@@ -197,7 +202,29 @@ const ui = new Interface();
 /* ================ Functions ================ */
 // show MENU-API
 const showMenuAPI = (datas) => {
+    let buy = selector('#buyOrder');
+    
     ui.showAPI(datas);
+    
+    // buy confirmed and create DB
+    buy.addEventListener('click', () => {
+        let ul = selector('.list-group');
+
+        // check length of the element ul, if there are elements create DB 
+        if (ul.childNodes.length) {
+            let transaction = DB.transaction(['sales'], 'readwrite');
+            let objectStore = transaction.objectStore('sales');
+
+            client.id = Date.now()
+
+            // add cliente in IndexdDB
+            objectStore.add(client)
+            transaction.oncomplete = () => console.log("Completo")
+                
+            // refresh 
+            window.location.reload();
+        }
+    })
 }
 
 // consult the API
@@ -213,7 +240,6 @@ const consultAPI = () => {
 const newClient = () => {
     let table = selector('#table').value;
     let hours = selector('#hours').value;
-    let spinner = selector('.spinner');
     let menu = selector('.menu')
 
     // Check if there are empty fields
@@ -251,9 +277,9 @@ const createDB = () => {
         })
 
         objectStore.createIndex('id', 'id', { unique: true });
-        objectStore.createIndex('name', 'name', { unique: false });
-        objectStore.createIndex('precio', 'precio', { unique: false });
-        objectStore.createIndex('categoria', 'categoria', { unique: false });
+        objectStore.createIndex('table', 'table', { unique: false });
+        objectStore.createIndex('hours', 'hours', { unique: false });
+        objectStore.createIndex('order', 'order', { unique: false });
     }
 }
 
