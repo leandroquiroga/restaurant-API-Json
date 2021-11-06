@@ -1,14 +1,12 @@
 /* ================ Global Functions  ================ */
-const selector = (elment) => document.querySelector(elment);
-const creator = (element) => document.createElement(element);
+export const selector = (elment) => document.querySelector(elment);
+export const creator = (element) => document.createElement(element);
 /* ================ Global Variables  ================ */
-let form = selector('#form');
 let DB;
+let form = selector('#form');
 let buttonOrder = selector('#calculator-mount');
 let buttonFinish = selector('#finish-orden');
 let spinner = selector('.spinner');
-
-
 /* ============ Object Global =========*/
 let client = {
     table: '',
@@ -198,7 +196,7 @@ class Interface {
 }
 
 /* ================ Instance Class  ================ */
-const ui = new Interface();
+export const ui = new Interface();
 /* ================ Functions ================ */
 // show MENU-API
 const showMenuAPI = (datas) => {
@@ -222,7 +220,9 @@ const showMenuAPI = (datas) => {
             transaction.oncomplete = () => console.log("Completo")
                 
             // refresh 
-            window.location.reload();
+            setTimeout(() => {
+                window.location.reload();
+            }, 500);
         }
     })
 }
