@@ -1,36 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="cotizador APP" content="aplication of ticket biller"/>
+        <meta name="description" content="This application is responsible for generating an order and displaying its ticket from IndexdDB"/>
+        <meta name="keywords" content="calculator, aplication, restaurant, ticket, order"/>
+        <meta name="author" content="Leandro Quiroga"/>
+        <meta name="copyright" content="LeandroQuiroga@2021" />
         <title>Facturacion</title>
-        <link rel="shortcut icon" href="./assets/svg/payment.svg" type="image/x-icon">
+        <link rel="shortcut icon" href="./assets/svg/payment.svg" type="image/x-icon"/>
         <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet"/>
         <!-- Bootstrap -->
-        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
         <!-- CSS Styles -->
-        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/main.css"/>
     </head>
     <body>
         <header class="d-flex justify-content-between align-content-center p-3 header">
-            <img src="./assets/img/payment.png" alt="logo">
-            <nav class="navbar navbar-expand">
+            <div class="d-flex justify-content-center align-items-center">
+                <img src="./assets/img/payment.png" alt="logo" class="logo">
+            </div>
+            <div class="d-flex justify-content-around">
+                <nav class="navbar nav-desktop navbar-expand">
+                    <div class="container-fluid">
+                        <ul class="navbar-nav mx-4">
+                            <li class="nav-item ">
+                              <a class="nav-link ancla" aria-current="page" href="./index.html">Nuevo Cliente</a>
+                            </li>
+                            <li class="nav-item ">
+                              <a class="nav-link ancla" href="./facturacion.html">Facturacion</a>
+                            </li>
+                          </ul>
+                    </div>
+                </nav>
+                <div class="d-block menu-mobile">
+                    <img src="./assets/svg/menu-2.svg" alt="menu" class="logo logo-menu">
+                    <!-- Mobile menu -->
+                </div>
+            </div>
+        </header>
+        <section class="nav-menu visually-hidden">
+            <nav class="d-flex justify-content-center align-items-center">
                 <div class="container-fluid">
-                    <ul class="navbar-nav mx-4">
-                        <li class="nav-item">
-                          <a class="nav-link ancla" aria-current="page" href="./index.html">Nuevo Cliente</a>
+                    <ul class="navbar-nav flex-row justify-content-center">
+                        <li class="nav-item mx-3">
+                            <a class="nav-link ancla" aria-current="page" href="./index.html">Nuevo Cliente</a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link ancla" href="./facturacion.html">Facturacion</a>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link ancla" href="./facturacion.html">Facturacion</a>
                         </li>
-                      </ul>
+                    </ul>
                 </div>
             </nav>
-        </header>
+        </section>
         <main class="menu container mx-auto p-2 d-flex row justify-content-center">
             <div class="container mx-auto p-2 list-menu cards" id="content"></div>
         </main>
