@@ -1,6 +1,4 @@
-/* order shadow rounded-3 p-2 d-flex justify-content-center --> class of card */
-
-import { creator, selector, ui } from "./app/app";
+import { creator, navMenu, selector, ui } from "./app/app";
 
 let db;
 
@@ -113,3 +111,4 @@ const loadTicket = () => {
 }
 
 loadTicket()
+navMenu()
