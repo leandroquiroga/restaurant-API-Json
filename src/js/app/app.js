@@ -151,7 +151,6 @@ class Interface {
         time.textContent = `Hora: ${hours}`;
 
         // ul
-
         let ul = creator('ul');
         ul.classList.add('list-group')
 
@@ -190,6 +189,7 @@ class Interface {
 
     }
 
+    // return mount total of an orden
     totalPrice(cant, price) {
         return cant * price;
     }
@@ -200,7 +200,7 @@ export const ui = new Interface();
 /* ================ Functions ================ */
 // show MENU-API
 const showMenuAPI = (datas) => {
-    let buy = selector('#buyOrder');
+    let buy = selector('.buyOrder');
     
     ui.showAPI(datas);
     
@@ -212,17 +212,20 @@ const showMenuAPI = (datas) => {
         if (ul.childNodes.length) {
             let transaction = DB.transaction(['sales'], 'readwrite');
             let objectStore = transaction.objectStore('sales');
-
-            client.id = Date.now()
-
+            let alert = selector('#alert-success')
+            client.id = Date.now();
             // add cliente in IndexdDB
             objectStore.add(client)
             transaction.oncomplete = () => console.log("Completo")
-                
-            // refresh 
+
+            
+            // alert success
+            alert.classList.remove('visually-hidden');
             setTimeout(() => {
+                alert.classList.add('visually-hidden');
+                // refresh 
                 window.location.reload();
-            }, 500);
+            }, 2500)
         }
     })
 }
@@ -255,7 +258,6 @@ const newClient = () => {
         menu.classList.remove('d-none')
         form.reset();
         consultAPI();
-        // window.open('./../../facturacion.html', '_blank');
     },2000)
 }
 
@@ -283,9 +285,19 @@ const createDB = () => {
     }
 }
 
+// active responsive-menu
+export const navMenu = () => {
+    let menu = selector('.logo-menu');
+
+    menu.addEventListener('click', () => {
+        let menu_mobile = selector('.nav-menu');
+        menu_mobile.classList.toggle('visually-hidden')
+    })
+}
 export const initAPP = () => {
     document.addEventListener('DOMContentLoaded', () => {
         createDB();
-        buttonOrder.addEventListener('click', newClient)
+        buttonOrder.addEventListener('click', newClient);
+        navMenu()
     })
 }
